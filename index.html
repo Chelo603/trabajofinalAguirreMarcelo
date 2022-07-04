@@ -1,0 +1,121 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./estilo.css" />
+  <title>Carta Sur</title>
+</head>
+
+<header>
+  <img src="./imagenes/CartaSur_138x58.jpg" alt="envio" width="60" height="50" />
+  <h1>Obtené tu préstamo más rápido y fácil</h1>
+</header>
+
+<body>
+  <section>    
+    <div class="caja1">
+    <form name="formulario" method="post" action="/simular">
+     
+        <div class="header">
+          <legend>Ingrese los datos aquí</legend>
+        </div>
+        <div class="control">
+        <div>
+          <label for="nombre">Nombre:<br />
+            <input type="nombre" name="nombre" id="nombre" placeholder="nombre" min="500" step="500" /></label>
+        </div>
+        <div name="frmPrestamo" id="frmPrestamo" min="1" style="width: 60%"  >
+          <div >
+            <label for="fecha">Fecha: <br />
+              <input type="date" name="fecha" id="fecha" placeholder="fecha" /></label>
+          </div>
+          <div >
+            <label for="monto">Monto:<br />
+              <input type="number" name="monto" id="monto" placeholder="monto" min="500" step="500" /></label>
+          </div>
+          <div >
+            <label for="periodo">Periodo de pago:<br />
+              <select name="periodo" id="periodo">
+                <option value="semanal">semanal</option>
+                <option value="quincenal">quincenal</option>
+                <option value="mensual">mensual</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label for="interes">Interés (anual):<br />
+              <input type="number" name="interes" id="interes" placeholder="interés" 
+                style="width: 10%" /></label>
+          </div>
+          <div>
+            <label for="plazo">Plazo:
+              <div class="radios">
+                <label for="mensual" class="radioContenedor">Mensual
+                  <input type="radio" name="tipoPlazo" id="mensual" value="mensual" />
+                  <span class="circle"></span>
+                </label>
+                <label for="anual" class="radioContenedor">Anual
+                  <input type="radio" name="tipoPlazo" id="anual" value="anual" />
+                  <span class="circle"></span>
+                </label>
+              </div>
+              <label for="cuotas">cuotas<br />
+              <input type="number" name="plazo"  id="plazo" placeholder="Ingresa cantidad cuotas" min="500" step="500" required />
+            </label>
+          </div>
+        </div>
+          <br />
+          <button id="simular" onclick="simularPrestamo()">
+            Simular préstamo
+          </button>
+        </div>
+      
+    </form>
+  </div>
+    <div class="caja2">
+        <div id="contenedorTabla">
+          <div id="apodo"></div>        
+        <div id="amortizaciones"></div>
+        </div>  
+      </div>    
+    <h2>Para mas informacion contactanos:</h2>
+    <section>  
+    <form id="form">
+      <div class="field">
+        <label for="nombre">nombre</label>
+        <input type="text" name="nombre" id="nombre">
+      </div>
+      <div class="field">
+        <label for="correo">correo</label>
+        <input type="text" name="correo" id="correo">
+      </div>
+      <div class="field">
+        <label for="telefono">telefono</label>
+        <input type="text" name="telefono" id="telefono">
+      </div>
+      <div class="field">
+        <label for="mensajes">mensajes</label>
+        <input type="text" name="mensajes" id="mensajes">
+      </div>      
+      <input type="submit" id="button" value="Send Email">
+    </form>
+  </div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    emailjs.init('UJPK0lahi5lib4dIi')
+  </script>
+  <script src="./main.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+    emailjs.init('UJPK0lahi5lib4dIi')
+  </script>
+</body>
+</html>
